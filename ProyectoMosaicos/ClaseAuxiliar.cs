@@ -9,6 +9,13 @@ namespace ProyectoMosaicos
 {
     public class ClaseAuxiliar
     {
+
+  
+        //Calcula la cantidad máxima de productos que pueden caber en un palet,
+        // organizándolos de manera óptima, con la posibilidad de girar los productos
+        // en filas alternas para maximizar el espacio disponible.
+  
+       
         public int cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
         {
             if (altoProducto <= 0 || anchoProducto <= 0 || altoPale <= 0 || anchoPale <= 0)
@@ -23,15 +30,24 @@ namespace ProyectoMosaicos
                 return -1;
             }
 
-            // Opción 1: Mantener la orientación original del producto
-            int productosOpcion1 = (altoPale / altoProducto) * (anchoPale / anchoProducto);
+            int filas = altoPale / altoProducto; // Número de filas si se coloca normal
+            int columnas = anchoPale / anchoProducto; // Número de columnas en una fila normal
 
-            // Opción 2: Rotar el producto
-            int productosOpcion2 = (altoPale / anchoProducto) * (anchoPale / altoProducto);
+            int totalProductos = filas * columnas; // Cantidad de productos sin rotaciones
 
-            // Devolvemos el máximo entre ambas opciones
-            return Math.Max(productosOpcion1, productosOpcion2);
+            // Espacio restante en altura después de colocar las filas normales
+            int espacioRestante = altoPale - (filas * altoProducto);
+
+            // Si hay espacio restante, intentamos colocar una fila rotada
+            if (espacioRestante >= anchoProducto)
+            {
+                int columnasFilaExtra = anchoPale / altoProducto; // Rotamos los productos en esta fila
+                totalProductos += columnasFilaExtra; // Agregamos la fila extra con productos rotados
+            }
+
+            return totalProductos;
         }
+
 
 
         public int division(int distanciaPale, int distanciaProducto)
