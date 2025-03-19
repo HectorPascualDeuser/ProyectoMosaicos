@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoMosaicos.Models
 {
-    public class Pale
+    internal class Producto
     {
-        int Alto;
-
-        int Ancho;
     }
 }
