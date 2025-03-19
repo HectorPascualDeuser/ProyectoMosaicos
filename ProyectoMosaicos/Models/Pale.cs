@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProyectoMosaicos.Models
 {
+    public enum Tipo{
+    Americano, Europeo, Libre
+    }
     public class Pale
-    {
-        public int Alto;
-
-        public int Ancho;
+    {    
+        public int Id {get; set;}
+        public int Alto {get; set;}
+        public Tipo Tipo {get; set;}
+        public int Ancho {get; set;}
     }
 }
