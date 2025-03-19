@@ -8,5 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <RadioButton Content="Tipo Americano" HorizontalAlignment="Left" Margin="93,101,0,0" VerticalAlignment="Top" Name="TipoAmericano" GroupName="TipoSeleccion"/>
+        <RadioButton Content="Tipo Europeo" HorizontalAlignment="Left" Margin="93,121,0,0" VerticalAlignment="Top" Name="TipoEuropeo" GroupName="TipoSeleccion"/>
+        <RadioButton Content="Tipo Libre" HorizontalAlignment="Left" Margin="93,141,0,0" VerticalAlignment="Top" Name="TipoLibre" GroupName="TipoSeleccion"/>
+        <TextBox HorizontalAlignment="Left" Margin="63,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="AltoPale"/>
+        <TextBox HorizontalAlignment="Left" Margin="208,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="AnchoPale"/>
+        <Label Content="Alto" HorizontalAlignment="Left" Margin="63,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.442,-1.986" Height="24" Width="52"/>
+        <Label Content="Ancho" HorizontalAlignment="Left" Margin="208,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.442,-1.986" Height="24" Width="52"/>
+
     </Grid>
 </Window>
