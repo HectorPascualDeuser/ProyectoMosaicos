@@ -8,7 +8,9 @@ namespace ProyectoMosaicos.Models
 {
     public class Producto
     {
-        private int Altura;
-        private int Anchura;
+        private int Id {get; set;}
+        private string Nombre {get; set;}
+        private int Altura {get; set;}
+        private int Anchura {get; set;}
     }
 }
