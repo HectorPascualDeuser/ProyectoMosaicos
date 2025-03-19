@@ -11,6 +11,7 @@ namespace ProyectoMosaicos
     {
         public bool cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
         {
+//Opa
             int numeroProductos;
             int distanciaReducida;
             int anchoRestante;
