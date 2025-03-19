@@ -9,20 +9,20 @@ namespace ProyectoMosaicos
 {
     public class ClaseAuxiliar
     {
-        public bool cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
+        public int cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
         {
-//Opa
+
             int numeroProductos;
             int distanciaReducida;
             int anchoRestante;
             int altoRestante;
             if (0 >= altoProducto || 0 >= altoPale || 0 >= anchoPale || 0 >= anchoProducto) {
                 MessageBox.Show("Ningún valor puede ser 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
+                return -1;
             }else if (altoProducto > altoPale && altoProducto > anchoPale || anchoProducto > altoPale && anchoProducto > anchoPale)
             {
                 MessageBox.Show("El Producto no cabe en el Palet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
+                return -1;
             }
 
             if(altoProducto> anchoProducto && anchoPale > altoPale)
@@ -34,7 +34,14 @@ namespace ProyectoMosaicos
 
                 if (altoRestante < altoProducto)
                 {
-
+                    if (altoRestante < anchoProducto)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        numeroProductos = numeroProductos + division(anchoPale,altoProducto);
+                    }
                 }
 
                 
@@ -47,7 +54,7 @@ namespace ProyectoMosaicos
 
 
 
-                return true;
+                return 0;
         }
 
         public int division(int distanciaPale, int distanciaProducto)

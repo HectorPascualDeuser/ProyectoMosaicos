@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoMosaicos", "ProyectoMosaicos\ProyectoMosaicos.csproj", "{CE897A49-EDA7-46C0-9502-2575EBF7659E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "Pruebas\Pruebas.csproj", "{EFA4B0EB-B5C5-428D-A395-C629ABEA2995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CE897A49-EDA7-46C0-9502-2575EBF7659E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE897A49-EDA7-46C0-9502-2575EBF7659E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE897A49-EDA7-46C0-9502-2575EBF7659E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA4B0EB-B5C5-428D-A395-C629ABEA2995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA4B0EB-B5C5-428D-A395-C629ABEA2995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA4B0EB-B5C5-428D-A395-C629ABEA2995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA4B0EB-B5C5-428D-A395-C629ABEA2995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
