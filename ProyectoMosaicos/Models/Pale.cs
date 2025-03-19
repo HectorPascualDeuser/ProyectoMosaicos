@@ -8,8 +8,8 @@ namespace ProyectoMosaicos.Models
 {
     public class Pale
     {
-        int Alto;
+        public int Alto;
 
-        int Ancho;
+        public int Ancho;
     }
 }

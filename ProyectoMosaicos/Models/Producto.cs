@@ -8,5 +8,7 @@ namespace ProyectoMosaicos.Models
 {
     public class Producto
     {
+        private int Altura;
+        private int Anchura;
     }
 }
