@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ProyectoMosaicos
@@ -10,27 +6,27 @@ namespace ProyectoMosaicos
     public class ClaseAuxiliar
     {
 
-  
-        //Calcula la cantidad máxima de productos que pueden caber en un palet,
+        // Calcula la cantidad máxima de productos que pueden caber en un palet,
         // organizándolos de manera óptima, con la posibilidad de girar los productos
         // en filas alternas para maximizar el espacio disponible.
-  
-       
+        // El número máximo de productos que caben en el palet sin exceder sus dimensiones.
+        // Si algún valor es 0 o negativo, o si el producto no cabe en ninguna orientación, devuelve -1.
+
         public int cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
         {
             if (altoProducto <= 0 || anchoProducto <= 0 || altoPale <= 0 || anchoPale <= 0)
             {
-                MessageBox.Show("Ningún valor puede ser 0 o negativo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MostrarMensajeError("Ningún valor puede ser 0 o negativo", "Error");
                 return -1;
             }
 
             if ((altoProducto > altoPale && anchoProducto > anchoPale) || (anchoProducto > altoPale && altoProducto > anchoPale))
             {
-                MessageBox.Show("El Producto no cabe en el Palet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MostrarMensajeError("El Producto no cabe en el Palet", "Error");
                 return -1;
             }
 
-            int filas = altoPale / altoProducto; // Número de filas si se coloca normal
+            int filas = altoPale / altoProducto; // Número de filas en orientación normal
             int columnas = anchoPale / anchoProducto; // Número de columnas en una fila normal
 
             int totalProductos = filas * columnas; // Cantidad de productos sin rotaciones
@@ -48,12 +44,12 @@ namespace ProyectoMosaicos
             return totalProductos;
         }
 
+        // Muestra un MessageBox con el mensaje y título proporcionados.
+        // </summary>
 
-
-        public int division(int distanciaPale, int distanciaProducto)
+        private void MostrarMensajeError(string mensaje, string titulo)
         {
-            return distanciaPale / distanciaProducto;
+            MessageBox.Show(mensaje, titulo, MessageBoxButton.OK, MessageBoxImage.Error);
         }
+    }
 }
-}
-
