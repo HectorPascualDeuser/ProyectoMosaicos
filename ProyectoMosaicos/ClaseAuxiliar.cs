@@ -11,51 +11,28 @@ namespace ProyectoMosaicos
     {
         public int cantidadProductos(int altoPale, int anchoPale, int altoProducto, int anchoProducto)
         {
-
-            int numeroProductos;
-            int distanciaReducida;
-            int anchoRestante;
-            int altoRestante;
-            if (0 >= altoProducto || 0 >= altoPale || 0 >= anchoPale || 0 >= anchoProducto) {
-                MessageBox.Show("Ningún valor puede ser 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (altoProducto <= 0 || anchoProducto <= 0 || altoPale <= 0 || anchoPale <= 0)
+            {
+                MessageBox.Show("Ningún valor puede ser 0 o negativo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return -1;
-            }else if (altoProducto > altoPale && altoProducto > anchoPale || anchoProducto > altoPale && anchoProducto > anchoPale)
+            }
+
+            if ((altoProducto > altoPale && anchoProducto > anchoPale) || (anchoProducto > altoPale && altoProducto > anchoPale))
             {
                 MessageBox.Show("El Producto no cabe en el Palet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return -1;
             }
 
-            if(altoProducto> anchoProducto && anchoPale > altoPale)
-            {
-                 numeroProductos = division(anchoPale, anchoProducto);
-                 distanciaReducida = numeroProductos * anchoProducto;
-                 anchoRestante = anchoPale - distanciaReducida;
-                 altoRestante = altoPale - altoProducto;
+            // Opción 1: Mantener la orientación original del producto
+            int productosOpcion1 = (altoPale / altoProducto) * (anchoPale / anchoProducto);
 
-                if (altoRestante < altoProducto)
-                {
-                    if (altoRestante < anchoProducto)
-                    {
-                        return 0;
-                    }
-                    else
-                    {
-                        numeroProductos = numeroProductos + division(anchoPale,altoProducto);
-                    }
-                }
+            // Opción 2: Rotar el producto
+            int productosOpcion2 = (altoPale / anchoProducto) * (anchoPale / altoProducto);
 
-                
-            }else if (altoProducto < anchoProducto && anchoPale < altoPale)
-            {
-                numeroProductos = division(altoPale, altoProducto);
-                distanciaReducida = numeroProductos * anchoProducto;
-                anchoRestante = altoPale - distanciaReducida;
-            }
-
-
-
-                return 0;
+            // Devolvemos el máximo entre ambas opciones
+            return Math.Max(productosOpcion1, productosOpcion2);
         }
+
 
         public int division(int distanciaPale, int distanciaProducto)
         {
