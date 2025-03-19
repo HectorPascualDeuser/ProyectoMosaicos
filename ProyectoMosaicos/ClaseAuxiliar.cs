@@ -29,10 +29,19 @@ namespace ProyectoMosaicos
                  numeroProductos = division(anchoPale, anchoProducto);
                  distanciaReducida = numeroProductos * anchoProducto;
                  anchoRestante = anchoPale - distanciaReducida;
+                 altoRestante = altoPale - altoProducto;
+
+                if (altoRestante < altoProducto)
+                {
+
+                }
+
                 
             }else if (altoProducto < anchoProducto && anchoPale < altoPale)
             {
-
+                numeroProductos = division(altoPale, altoProducto);
+                distanciaReducida = numeroProductos * anchoProducto;
+                anchoRestante = altoPale - distanciaReducida;
             }
 
 
