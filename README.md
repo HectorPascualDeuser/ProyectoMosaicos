@@ -1,4 +1,4 @@
 # ProyectoMosaicos
 
-[!WARNING]
+[!Warning]
 diabloso
