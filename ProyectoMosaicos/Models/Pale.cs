@@ -11,6 +11,6 @@ namespace ProyectoMosaicos.Models
         public int Id { get; set; } 
         public string Tipo { get; set; }
         public int Ancho { get; set; }
-        public int Alto { get; set; }
+        public int Largo { get; set; }
     }
 }
